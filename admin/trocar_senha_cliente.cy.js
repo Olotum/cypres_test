@@ -1,0 +1,46 @@
+describe('template spec', () => {
+  it('passes', () => {
+    cy.visit('http://localhost/loja-admin')
+    cy.get('[name="usuario"]').click();
+    cy.get('[name="usuario"]').type('admin');
+    cy.get('[name="senha"]').type('admin{enter}');
+    cy.get('button.swal2-confirm').click();
+    cy.get('#link-acessar-usuarios').click();
+    cy.get('#icone-editar-usuario-1').click();
+    cy.get('[name="senha"]').click();
+    cy.get('[name="senha"]').type('cliente1');
+    cy.get('#btn-salvar-usuario').click();
+    cy.get('#link-nav-sair').click();
+    cy.get('button.swal2-confirm').click();
+    cy.get('button.swal2-confirm').click();
+    cy.visit('http://localhost/loja')
+    cy.get('#login').click();
+    cy.get('[name="usuario"]').click();
+    cy.get('[name="usuario"]').type('cliente');
+    cy.get('[name="senha"]').type('cliente');
+    cy.get('#submit').click();
+    cy.get('button.swal2-confirm').click();
+    cy.get('[name="senha"]').click();
+    cy.get('[name="senha"]').type('cliente1');
+    cy.get('[name="usuario"]').click();
+    cy.get('[name="usuario"]').type('cliente');
+    cy.get('#submit').click();
+    cy.get('button.swal2-confirm').click();
+    cy.get('#link-sair').click();
+    cy.get('button.swal2-confirm').click();
+    cy.get('button.swal2-confirm').click();
+    cy.visit('http://localhost/loja-admin')
+    cy.get('[name="usuario"]').click();
+    cy.get('[name="usuario"]').type('admin');
+    cy.get('[name="senha"]').type('admin{enter}');
+    cy.get('button.swal2-confirm').click();
+    cy.get('#link-acessar-usuarios').click();
+    cy.get('#icone-editar-usuario-1').click();
+    cy.get('[name="senha"]').click();
+    cy.get('[name="senha"]').type('cliente');
+    cy.get('#btn-salvar-usuario').click();
+    cy.get('#link-nav-sair').click();
+    cy.get('button.swal2-confirm').click();
+    cy.get('button.swal2-confirm').click();
+  })
+})
